@@ -1,0 +1,135 @@
+{
+	"name": "ano_extension",
+	"description": "Plugin for the ano language",
+	"version": "0.0.1",
+	"publisher": "Esito AS",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"repository": {
+		"url": "https://github.com/Microsoft/vscode-extension-samples"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:ano", "*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"colors": [
+			{
+				"id": "ano.Comment",
+				"description": "Comments",
+				"defaults": {
+					"dark": "#055536",
+					"light": "#0987cb"
+				}
+			},
+			{
+				"id": "ano.Table",
+				"description": "Table names",
+				"defaults": {
+					"dark": "#ac7309",
+					"light": "#ac7309"
+				}
+			},
+			{
+				"id": "ano.Column",
+				"description": "Columns names",
+				"defaults": {
+					"dark": "#887507",
+					"light": "#887507"
+				}
+			},
+			{
+				"id": "ano.Datatype",
+				"description": "Datatypes",
+				"defaults": {
+					"dark": "#7f8399",
+					"light": "#7f8399"
+				}
+			},
+			{
+				"id": "ano.Program",
+				"description": "Background decoration color for large numbers",
+				"defaults": {
+					"dark": "#8e09cb",
+					"light": "#8e09cb"
+				}
+			},
+			{
+				"id": "ano.Keyword1",
+				"description": "Commands",
+				"defaults": {
+					"dark": "#1b83bb",
+					"light": "#1b83bb"
+				}
+			},
+			{
+				"id": "ano.Keyword2",
+				"description": "Sub Commands",
+				"defaults": {
+					"dark": "#0972aa",
+					"light": "#0972aa"
+				}
+			},
+			{
+				"id": "ano.Parameter",
+				"description": "Parameters",
+				"defaults": {
+					"dark": "#67cb09",
+					"light": "#67cb09"
+				}
+			},
+			{
+				"id": "ano.Optional",
+				"description": "Optional parameters",
+				"defaults": {
+					"dark": "#67cb09",
+					"light": "#67cb09"
+				}
+			},
+			{
+				"id": "ano.Anonymization",
+				"description": "Anomyzations",
+				"defaults": {
+					"dark": "#67cb09",
+					"light": "#67cb09"
+				}
+			}
+		],
+		"languages": [
+			{
+				"id": "ano",
+				"extensions": [
+					".ano"
+				],
+				"aliases": [
+					"Anonymizer",
+					"antlr"
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./",
+		"build": "cd antlr && npm run build && cd .. && npm run compile"
+	},
+	"dependencies": {
+		"@types/node": "^14.14.6",
+		"antlr4ts": "^0.5.0-alpha.4"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.6",
+		"@typescript-eslint/eslint-plugin": "^3.0.2",
+		"@typescript-eslint/parser": "^3.0.2",
+		"eslint": "^7.1.0",
+		"typescript": "^4.0.5",
+		"@types/vscode": "^1.32.0"
+	}
+}
